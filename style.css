@@ -201,8 +201,8 @@ section .girl {
 #queueVisualizer {
     margin-top: 5px;
     padding: 15px;
-    background-color: #8f2c24; /* Dark background */
-    color: #f0f0f0; /* Bright green text */
+    background-color: #ad514b; /* Dark background */
+    color: #fff; /* Bright green text */
     border: 1px solid rgba(255, 255, 255, 0.5);
     border-radius: 5px;
     font-size: 1.1em; /* Adjusted size */
@@ -220,3 +220,4 @@ section .girl {
     display: none;
 
 }
+
