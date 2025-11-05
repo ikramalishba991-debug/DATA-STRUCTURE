@@ -1,0 +1,221 @@
+/* --- Keep all your original styles from * to @keyframes animate --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+section {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* ... (all styles for .bg, .trees, .girl, @keyframes animateGirl, .login) ... */
+section .bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+section .trees {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 100;
+  pointer-events: none;
+}
+
+section .girl {
+  position: absolute;
+  scale: 0.65;
+  pointer-events: none;
+  animation: animateGirl 10s linear infinite;
+}
+
+@keyframes animateGirl {
+  0% {
+    transform: translateX(calc(100% + 100vw));
+  }
+  50% {
+    transform: translateX(calc(-100% - 100vw));
+  }
+  50.01% {
+    transform: translateX(calc(-100% - 100vw)) rotateY(180deg);
+  }
+  100% {
+    transform: translateX(calc(100% + 100vw)) rotateY(180deg);
+  }
+}
+
+.login {
+  position: relative;
+  padding: 40px; /* Reduced padding a bit */
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(15px);
+  border: 1px solid #fff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  border-right: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  width: 90%; /* Make it responsive */
+  max-width: 600px; /* Max width */
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Reduced gap */
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+  z-index: 10; /* Make sure it's above leaves */
+}
+
+.login h2 {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  font-size: 2.5em;
+  font-weight: 600;
+  color: #8f2c24;
+  margin-bottom: 10px;
+}
+/* ... (all styles for .leaves and @keyframes animate) ... */
+.leaves {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  pointer-events: none;
+}
+/* ... (rest of leaf styles) ... */
+.leaves .set {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.leaves .set div {
+  position: absolute;
+  display: block;
+}
+
+.leaves .set div:nth-child(1) { left: 20%; animation: animate 20s linear infinite; }
+.leaves .set div:nth-child(2) { left: 50%; animation: animate 14s linear infinite; }
+.leaves .set div:nth-child(3) { left: 70%; animation: animate 12s linear infinite; }
+.leaves .set div:nth-child(4) { left: 5%; animation: animate 15s linear infinite; }
+.leaves .set div:nth-child(5) { left: 85%; animation: animate 18s linear infinite; }
+.leaves .set div:nth-child(6) { left: 90%; animation: animate 12s linear infinite; }
+.leaves .set div:nth-child(7) { left: 15%; animation: animate 14s linear infinite; }
+.leaves .set div:nth-child(8) { left: 60%; animation: animate 15s linear infinite; }
+
+@keyframes animate {
+  0% { opacity: 0; top: -10%; transform: translateX(20px) rotate(0deg); }
+  10% { opacity: 1; }
+  20% { transform: translateX(-20px) rotate(45deg); }
+  40% { transform: translateX(-20px) rotate(90deg); }
+  60% { transform: translateX(20px) rotate(180deg); }
+  80% { transform: translateX(-20px) rotate(45deg); }
+  100% { top: 110%; transform: translateX(20px) rotate(225deg); }
+}
+
+/* --- NEW STYLES FOR PLATFORM --- */
+
+.login label {
+    font-size: 1.25em;
+    color: #8f2c24;
+    font-weight: 500;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.login .inputBox {
+  position: relative;
+  width: 100%;
+}
+
+.login input[type="text"],
+.login select {
+  position: relative;
+  width: 100%;
+  padding: 15px 20px;
+  outline: none;
+  font-size: 1.25em;
+  color: #8f2c24;
+  border-radius: 5px;
+  background: #fff;
+  border: none;
+  margin-bottom: 5px; /* Reduced margin */
+}
+
+.login ::placeholder {
+  color: #8f2c24;
+  opacity: 0.7;
+}
+
+.login button {
+  position: relative;
+  border: none;
+  outline: none;
+  background: #8f2c24;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.25em;
+  font-weight: 500;
+  transition: 0.5s;
+  width: 100%;
+  padding: 15px 20px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.login button:hover {
+  background: #d64c42;
+}
+
+/* For the two queue buttons */
+.queue-buttons {
+    display: flex;
+    gap: 10px;
+}
+.queue-buttons button {
+    width: 50%; /* Each button takes half */
+}
+
+/* For the result boxes */
+#outputArea,
+#queueVisualizer {
+    margin-top: 5px;
+    padding: 15px;
+    background-color: #333; /* Dark background */
+    color: #00ff2a; /* Bright green text */
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    font-size: 1.1em; /* Adjusted size */
+    font-family: 'Courier New', Courier, monospace;
+    min-height: 50px;
+    white-space: pre-wrap; 
+    word-wrap: break-word; 
+}
+
+#queueVisualizer {
+    color: #f0f0f0; /* White-ish text for diagram */
+}
+
+.hidden {
+    display: none;
+}

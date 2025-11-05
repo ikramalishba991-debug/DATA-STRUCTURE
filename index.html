@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Algorithm Practice Platform</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <section>
+            <div class="leaves">
+                <div class="set">
+                    <div><img src="leaf_01.png" /></div>
+                    <div><img src="leaf_02.png" /></div>
+                    <div><img src="leaf_03.png" /></div>
+                    <div><img src="leaf_04.png" /></div>
+                    <div><img src="leaf_01.png" /></div>
+                    <div><img src="leaf_02.png" /></div>
+                    <div><img src="leaf_03.png" /></div>
+                    <div><img src="leaf_04.png" /></div>
+                </div>
+            </div>
+            <img src="bg.jpg" class="bg" />
+            <img src="girl.png" class="girl" />
+            <img src="trees.png" class="trees" />
+
+            <div class="login">
+                <h2>Algorithm Practice Platform</h2>
+
+                <div class="inputBox">
+                    <label for="operationSelect">Choose an operation:</label>
+                    <select id="operationSelect">
+                        <option value="bubble">Bubble Sort</option>
+                        <option value="selection">Selection Sort</option>
+                        <option value="reverse">Reverse Name (Stack Demo)</option>
+                        <option value="binary">Binary Search</option>
+                        <option value="queue">Queue Visualizer</option>
+                    </select>
+                </div>
+
+                <div id="listAlgoControls">
+                    <div class="inputBox">
+                        <label for="mainInput" id="mainInputLabel">Enter values (e.g., 5, 2, 9, 1)</label>
+                        <input type="text" id="mainInput" placeholder="5, 2, 9, 1">
+                    </div>
+                    
+                    <div id="targetDiv" class="hidden inputBox">
+                        <label for="targetInput">Enter target value (k):</label>
+                        <input type="text" id="targetInput" placeholder="7">
+                    </div>
+                    
+                    <div class="inputBox">
+                        <button id="runButton">Run Algorithm</button>
+                    </div>
+                </div>
+
+                <div id="queueControls" class="hidden">
+                    <div class="inputBox">
+                        <label for="queueInput">Enter value to enqueue:</label>
+                        <input type="text" id="queueInput" placeholder="e.g., 10">
+                    </div>
+                    <div class="queue-buttons">
+                        <button id="enqueueButton">Enqueue</button>
+                        <button id="dequeueButton">Dequeue</button>
+                    </div>
+                </div>
+
+                <label>Result:</label>
+                <pre id="outputArea">Your result will appear here.</pre>
+                <pre id="queueVisualizer" class="hidden"></pre>
+            </div>
+        </section>
+
+        <script src="script.js"></script>
+    </body>
+</html>
